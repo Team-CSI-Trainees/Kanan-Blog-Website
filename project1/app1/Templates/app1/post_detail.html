@@ -1,0 +1,23 @@
+{% extends 'C:\Users\Hp\Desktop\Django project\project1\app1\Templates\app1\main.html' %}
+
+<div class="block">
+  {% block content %}
+
+  <article>
+    <img src="{{ object.author.profile.image.url }}" />
+    <div>
+      <div>
+        <a href="{% url 'profile' %}"><p>By {{ object.author }}</p></a>
+        <small>on {{ object.date_of_post|date:"F d, Y" }}</small>
+      </div>
+      <h1>{{object.topic}}</h1>
+      <p>{{ object.content }}</p>
+    </div>
+    {% if object.author  == user %}
+       <a href="{% url 'post-update' object.id %}">Update</a>
+       <a href="{% url 'post-delete' object.id %}">Delete</a>
+    {% endif %}  
+</article>
+
+  {% endblock content %}
+</div>

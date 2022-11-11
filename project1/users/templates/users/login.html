@@ -1,0 +1,22 @@
+{% extends 'C:\Users\Hp\Desktop\Django project\project1\app1\Templates\app1\main.html' %}
+
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <b><h1>Log In</h1></b><br>
+        {{form.as_p}}
+        <br><br>
+   <button type="submit">Log In</button>
+   <small>
+      <a href="{% url 'password_reset' %}">Forgot Password?
+      </a>
+   </small>
+    </form><br><br><hr>
+    <div>
+        <small>Not Have An Account?<a href="{% url 'register' %}">Sign Up</a>
+        </small>
+    </div>
+</div>    
+
+{% endblock content %}

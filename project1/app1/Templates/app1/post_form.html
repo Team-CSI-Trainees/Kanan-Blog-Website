@@ -1,0 +1,20 @@
+{% extends 'C:\Users\Hp\Desktop\Django project\project1\app1\Templates\app1\main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset>
+      <legend>
+        <b><h1>Blog Post</h1></b>
+      </legend>
+      <br />
+      {{form|crispy}}
+      <br /><br />
+    </fieldset>
+    <br /><br />
+    <button type="submit">Post</button>
+  </form>
+</div>
+
+{% endblock content %}

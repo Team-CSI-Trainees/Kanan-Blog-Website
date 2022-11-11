@@ -1,0 +1,108 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type= "text/css" href="{% static 'navbar.css' %}"/>
+    <link rel="stylesheet" type= "text/css" href="{% static 'home.css' %}"/>
+    <style>/*.flex-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    #navbar{
+    display: flex;
+    
+    
+    background-color: rgb(133, 189, 171);
+    border-radius: 3px;
+    position: fixed;
+    margin-right: auto;
+    margin-top: -19px;
+    padding-right: auto;
+    height: auto;
+    width: 100%;
+    }
+    #navbar li{
+        float: left;
+        list-style: none;
+        margin: 14px 0px ;
+    }
+    #navbar ul{
+        overflow:hidden ;
+    }
+    #navbar li a{
+        
+        padding: 30px 30px;
+        font-size: x-large;
+        text-decoration: none ;
+        color: white;
+        transition: font-size 2s cubic-bezier(0.075, 0.82, 0.165, 1)
+    }
+    #navbar li a:hover{
+        color: brown;
+        font-size: xx-large;
+       
+    }
+    .searchbox{
+        display: flex;
+        align-items: baseline;
+        float: right;
+        padding: 10px 28px 10px 9px;
+        margin: -54px -4px 1px 406px;
+    }
+    #navbar input{
+        padding: 6px 15px;
+        border-radius: 15px;
+        width: 220px;
+        padding: 9px 8px 3px 31px;
+        margin: 65px 11px 15px 11px;
+        height: 17px;
+       /* float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px
+        }*/
+    #mes{
+        margin: 100px 50px 10px 312px;
+        border-width: 3px;
+        border-radius: 40px;
+        border-color: black;
+    }
+    /* .content-section h1{
+        margin: 100px 50px 10px 312px;
+    } */
+    </style>
+{% if title %}
+    <title>Django Blog -{{ title }}</title>
+{% else %}
+   <title>Django Blog</title>
+{% endif %}
+    
+</head>
+<body>
+    {% include 'C:\Users\Hp\Desktop\Django project\project1\app1\Templates\app1\navbar.html' %}
+    <br><br><br><br><br>
+    <div id="mes">        
+    {% if messages %}
+           {% for message in messages %}
+             <div class="alert-{{ message.tags }}">
+                {{ message }}
+             </div>
+           {% endfor %}
+        {% endif %}
+    {% block content %}
+
+    
+
+    {% endblock  %}
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'C:\Users\Hp\Desktop\Django project\project1\app1\Templates\app1\main.html' %}
+
+<div class="block">
+{% block content %}
+    {% for post in post %}
+    <article>
+        <img src="{{ post.author.profile.image.url }}" class="profile-pic">
+    <div class="info">
+        <div>
+           <p><a href="{% url 'profile' %}">By {{ post.author }}</a>&nbsp;&nbsp;on {{ post.date_of_post|date:"F d, Y" }}</p> 
+        </div>
+        <h1><a href="{% url 'post-detail' post.id %}">{{post.topic}}</a></h1>
+        <p>{{ post.content }}</p>
+    </div><hr><br><br><br>
+    </article>
+    {% endfor %}
+{% endblock content %}
+</div>
